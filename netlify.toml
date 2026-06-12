@@ -1,7 +1,7 @@
 [build]
   base    = "moriah-portfolio"
   command = "npm run build"
-  publish = "moriah-portfolio/dist"
+  publish = "dist"
 
 [[redirects]]
   from   = "/*"
