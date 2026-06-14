@@ -14,7 +14,7 @@ import { sfAnimation } from './projects/sf-animation'
 
 function App() {
   return (
-    <BrowserRouter>
+    <BrowserRouter basename="/portfolio.site-moriah-/">
       <div className="portfolio-container">
         <Header />
         <main>
