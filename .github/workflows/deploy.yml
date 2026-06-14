@@ -22,18 +22,18 @@ jobs:
       - uses: actions/setup-node@v4
         with:
           node-version: '22'
-          cache: 'npm'
-          cache-dependency-path: moriah-portfolio/package-lock.json
 
       - name: Install dependencies
         working-directory: moriah-portfolio
-        run: npm ci
+        run: npm install
 
       - name: Build
         working-directory: moriah-portfolio
         run: |
           node --version
-          npx vite build
+          npm --version
+          ls node_modules/.bin/ | grep vite || echo "WARNING: vite not in node_modules/.bin"
+          node node_modules/vite/bin/vite.js build
 
       - uses: actions/upload-pages-artifact@v3
         with:
