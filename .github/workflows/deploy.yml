@@ -29,7 +29,7 @@ jobs:
           cache-dependency-path: moriah-portfolio/package-lock.json
 
       - name: Update npm
-        run: npm install -g npm@latest
+        run: npm install -g npm@10
 
       - name: Install dependencies
         working-directory: moriah-portfolio
