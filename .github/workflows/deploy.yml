@@ -25,15 +25,10 @@ jobs:
         uses: actions/setup-node@v4
         with:
           node-version: '22'
-          cache: 'npm'
-          cache-dependency-path: moriah-portfolio/package-lock.json
-
-      - name: Update npm
-        run: npm install -g npm@10
 
       - name: Install dependencies
         working-directory: moriah-portfolio
-        run: npm ci
+        run: npm install
 
       - name: Build
         working-directory: moriah-portfolio
