@@ -1,4 +1,4 @@
-export const Wireframes = ({ title, description, rows, groups }) => {
+export const Wireframes = ({ title, description, rows, groups, sectionLabel }) => {
   const whiteText = { color: '#fff' };
 
   const renderRow = (row) => (
@@ -22,24 +22,10 @@ export const Wireframes = ({ title, description, rows, groups }) => {
     </div>
   );
 
-  const renderGroupRow = (row) => (
-    <div key={row.title} className="wireframes-row" style={{ display: 'flex', marginBottom: '2rem' }}>
-      <div className="wireframes-row-label-col" style={{ minWidth: '120px' }}>
-        <span className="wireframes-row-label" style={{ ...whiteText, writingMode: 'vertical-rl', transform: 'rotate(180deg)' }}>{row.title}</span>
-      </div>
-      <div className="wireframes-row-content" style={{ flex: 1 }}>
-        {row.image ? (
-          <img src={row.image} alt={row.title} className="wireframe-img" />
-        ) : (
-          <div className="image-placeholder-rect wireframe-placeholder" style={whiteText}>{row.title}</div>
-        )}
-      </div>
-    </div>
-  );
-
   return (
     <section className="project-section wireframes-section">
       <div className="wireframes-header">
+        {sectionLabel && <span className="section-label">{sectionLabel}</span>}
         <h2 className="section-title" style={whiteText}>{title}</h2>
         <p className="section-body" style={whiteText}>{description}</p>
       </div>
@@ -49,10 +35,23 @@ export const Wireframes = ({ title, description, rows, groups }) => {
 
         {groups && groups.map((group) => (
           <div key={group.label} className="wireframes-group">
-            <h3 className="wireframes-group-title" style={whiteText}>{group.label}</h3>
-            {group.caption && <p className="wireframes-group-caption" style={whiteText}>{group.caption}</p>}
-            <div className="wireframes-group-rows">
-              {group.rows.map(renderGroupRow)}
+            <div className="wireframes-group-label-col">
+              <span className="wireframes-group-label">{group.label}</span>
+            </div>
+            <div className="wireframes-group-content">
+              <div className="wireframes-row">
+                {group.rows.map((row) => (
+                  <div key={row.title} className="wireframe-item">
+                    {row.image ? (
+                      <img src={row.image} alt={row.title} className="wireframe-img" />
+                    ) : (
+                      <div className="image-placeholder-rect wireframe-placeholder" style={whiteText}>{row.title}</div>
+                    )}
+                    <p className="wireframe-caption">{row.title}</p>
+                  </div>
+                ))}
+              </div>
+              {group.caption && <p className="wireframes-group-caption" style={whiteText}>{group.caption}</p>}
             </div>
           </div>
         ))}

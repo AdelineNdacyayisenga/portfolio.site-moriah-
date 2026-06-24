@@ -1,5 +1,5 @@
-import screenshotWork from '../assets/portfolio/screenshot-work-page.png';
-import screenshotServices from '../assets/portfolio/screenshot-services-page.png';
+import screenshotDesignSystem from '../assets/portfolio/screenshot-design-system.png';
+import screenshotAssembly from '../assets/portfolio/screenshot-assembly.png';
 import meetingImage from '../assets/portfolio/meeting.png';
 import heroSectionImage from '../assets/portfolio/hero section image.svg';
 import caseStudyStepsImage from '../assets/portfolio/case study steps image.svg';
@@ -118,14 +118,14 @@ export const portfolio = {
         label: "Adeline's Code",
         items: [
           {
-            image: screenshotWork,
-            caption: "Work Page",
-            note: "Built the responsive Work page with project cards, corner decorations, the striped hero section, and the CTA button.",
+            image: screenshotDesignSystem,
+            caption: "Design System Component",
+            note: "Built the reusable DesignSystem component that renders colors, typography, and UI components dynamically across all project case studies.",
           },
           {
-            image: screenshotServices,
-            caption: "Services Page",
-            note: "Implemented the 2×2 service grid with SVG icons, decorative corner elements, and the Book a Discovery Call CTA.",
+            image: screenshotAssembly,
+            caption: "Animation Assembly Component",
+            note: "Developed the Assembly component to display animation frames and CSS code side by side, bringing the SF Animation case study to life.",
           },
         ],
       },
